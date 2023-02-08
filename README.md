@@ -7,7 +7,7 @@ Join the [Discord](https://discord.gg/qyKT6bzqZQ) for support, updates and shari
 
 Feel free to make a pull request if you have any improvements or create a issue if something isn't working correctly!
 
-# Make sure to read the main branch README.md for more information about the bot! This is only going to explain the usage of the gameplanner branch!
+Make sure to read the main branch README.md for more information about the bot! This is only going to explain the usage of the gameplanner branch!
 ## Table Of Contents (TODO)
 - [Setup file](#setup_file)
 - [Gameplan file](#gameplan_file)
@@ -140,8 +140,8 @@ An instruction array in a round can have multiple objects that will be executed 
 The gameplanner is the tool you're looking for in this branch. It's a tool that can generate a gameplan for you based on keybinds.
 This makes it easier for us to make Gameplans by actually playing the map and placing towers, only downside is YOU HAVE TO USE key binds for tower placements, upgrades and target changes. To use, run the GamePlanner.bat file and follow the instructions.
 
-<a name="placing_towers"/>
 ## Keybinds to place towers
+<a name="placing_towers"/>
 |Tower|Keybind|
 |--|--|
 "DART"|"q"
@@ -170,8 +170,8 @@ This makes it easier for us to make Gameplans by actually playing the map and pl
 
 When you start the planner it will ask you for a keybind to place a tower, you can only cancel this by pressing `ESC`. After you've placed a tower, it will ask you for the next keybind, until you press `O` to finish the gameplan.
 
-<a name="keybinds"/>
 ## Keybinds
+<a name="keybinds"/>
 |Keybind|Action|
 |--|--|
 "O"|"Finish gameplan and exit + Start setup file configs"
@@ -182,8 +182,8 @@ When you start the planner it will ask you for a keybind to place a tower, you c
 
 You can use these keybinds instead of placing a tower
 
-<a name="upgrading_towers"/>
 ### Upgrading towers
+<a name="upgrading_towers"/>
 First, after using the keybind, click the tower you want to upgrade.
 Use the keyboard keybinds for upgrading top, middle and bottom path. You can not use the mouse as the gameplanner relies on keybinds
 
@@ -193,13 +193,13 @@ Use the keyboard keybinds for upgrading top, middle and bottom path. You can not
 "."|"Middle"
 "/"|"Bottom"
 
-<a name="changing_static_target"/>
 ### Changing Static Target
+<a name="changing_static_target"/>
 First, after using the keybind, click the tower you want to change the target of.
 Then, click the target position you want to change to.
 
-<a name="changing_target"/>
 ### Changing Target
+<a name="changing_target"/>
 First, after using the keybind, click the tower you want to change the target of. NOTE: HOLD SHIFT WHILE CLICK TO SET IT TO SPIKE TYPE, otherwise it will be regular.
 Then choose the target with the keyboard keybinds as shown below.
 
@@ -223,12 +223,12 @@ Then choose the target with the keyboard keybinds as shown below.
 "4"|"STRONG"
 </details>
 
-<a name="starting_round"/>
 ### Starting Round
+<a name="starting_round"/>
 Using the keybind it will add the starting round instruction, always fast fowrwarded
 
+### Save and Exit
 <a name="save_and_exit"/>
-### Save and exit
 Finally after you've finished the gameplan, you can save it by pressing `O`, then it will ask if you'd like to make a setup file. Note: This fully uses the console, no keybinds here.
 This will ask for:
 Hero (Defaults to QUINCY)
