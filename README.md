@@ -210,6 +210,7 @@ Then choose the target with the keyboard keybinds as shown below.
 
 <details>
 <summary>SPIKE TYPE</summary>
+
 |Keybind|Target|
 |--|--|
 |1|NORMAL|
@@ -220,6 +221,7 @@ Then choose the target with the keyboard keybinds as shown below.
 
 <details>
 <summary>REGULAR TYPE</summary>
+
 |Keybind|Target|
 |--|--|
 |1|FIRST|
