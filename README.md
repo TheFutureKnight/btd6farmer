@@ -140,38 +140,40 @@ An instruction array in a round can have multiple objects that will be executed 
 The gameplanner is the tool you're looking for in this branch. It's a tool that can generate a gameplan for you based on keybinds.
 This makes it easier for us to make Gameplans by actually playing the map and placing towers, only downside is YOU HAVE TO USE key binds for tower placements, upgrades and target changes. To use, run the GamePlanner.bat file and follow the instructions.
 
-## Keybinds to place towers
 <a name="placing_towers"/>
+
+## Keybinds to place towers
 |Tower|Keybind|
 |--|--|
-|"DART"|"q"|
-|"BOOMERANG"|"w"|
-|"BOMB"|"e"|
-|"TACK"|"r"|
-|"ICE"|"t"|
-|"GLUE"|"y"|
-|"SNIPER"|"z"|
-|"SUBMARINE"|"x"|
-|"BUCCANEER"|"c"|
-|"ACE"|"v"|
-|"HELI"|"b"|
-|"MORTAR"|"n"|
-|"DARTLING"|"m"|
-|"WIZARD"|"a"|
-|"SUPER"|"s"|
-|"NINJA"|"d"|
-|"ALCHEMIST"|"f"|
-|"DRUID"|"g"|
-|"BANANA"|"h"|
-|"ENGINEER"|"l"|
-|"SPIKE"|"j"|
-|"VILLAGE"|"k"|
-|"HERO"|"u"|
+|"DART"|q|
+|"BOOMERANG"|w|
+|"BOMB"|e|
+|"TACK"|r|
+|"ICE"|t|
+|"GLUE"|y|
+|"SNIPER"|z|
+|"SUBMARINE"|x|
+|"BUCCANEER"|c|
+|"ACE"|v|
+|"HELI"|b|
+|"MORTAR"|n|
+|"DARTLING"|m|
+|"WIZARD"|a|
+|"SUPER"|s|
+|"NINJA"|d|
+|"ALCHEMIST"|f|
+|"DRUID"|g|
+|"BANANA"|h|
+|"ENGINEER"|l|
+|"SPIKE"|j|
+|"VILLAGE"|k|
+|"HERO"|u|
 
 When you start the planner it will ask you for a keybind to place a tower, you can only cancel this by pressing `ESC`. After you've placed a tower, it will ask you for the next keybind, until you press `O` to finish the gameplan.
 
-## Keybinds
 <a name="keybinds"/>
+
+## Keybinds
 |Keybind|Action|
 |--|--|
 |"O"|"Finish gameplan and exit + Start setup file configs"|
@@ -182,24 +184,27 @@ When you start the planner it will ask you for a keybind to place a tower, you c
 
 You can use these keybinds instead of placing a tower
 
-### Upgrading towers
 <a name="upgrading_towers"/>
+
+### Upgrading towers
 First, after using the keybind, click the tower you want to upgrade.
 Use the keyboard keybinds for upgrading top, middle and bottom path. You can not use the mouse as the gameplanner relies on keybinds
 
 |Keybind|Path|
 |--|--|
-|","|"Top"|
-|"."|"Middle"|
-|"/"|"Bottom"|
+|,|Top|
+|.|Middle|
+|/|Bottom|
+
+<a name="changing_static_target"/>
 
 ### Changing Static Target
-<a name="changing_static_target"/>
 First, after using the keybind, click the tower you want to change the target of.
 Then, click the target position you want to change to.
 
-### Changing Target
 <a name="changing_target"/>
+
+### Changing Target
 First, after using the keybind, click the tower you want to change the target of. NOTE: HOLD SHIFT WHILE CLICK TO SET IT TO SPIKE TYPE, otherwise it will be regular.
 Then choose the target with the keyboard keybinds as shown below.
 
@@ -207,28 +212,30 @@ Then choose the target with the keyboard keybinds as shown below.
 <summary>SPIKE TYPE</summary>
 |Keybind|Target|
 |--|--|
-"1"|"NORMAL"
-"2"|"CLOSE"
-"3"|"FAR"
-"4"|"SMART"
+1|NORMAL
+2|CLOSE
+3|FAR
+4|SMART
 </details>
 
 <details>
 <summary>REGULAR TYPE</summary>
 |Keybind|Target|
 |--|--|
-"1"|"FIRST"
-"2"|"LAST"
-"3"|"CLOSE"
-"4"|"STRONG"
+1|FIRST
+2|LAST
+3|CLOSE
+4|STRONG
 </details>
 
-### Starting Round
 <a name="starting_round"/>
+
+### Starting Round
 Using the keybind it will add the starting round instruction, always fast fowrwarded
 
-### Save and Exit
 <a name="save_and_exit"/>
+
+### Save and Exit
 Finally after you've finished the gameplan, you can save it by pressing `O`, then it will ask if you'd like to make a setup file. Note: This fully uses the console, no keybinds here.
 This will ask for:
 Hero (Defaults to QUINCY)
