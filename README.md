@@ -1,4 +1,4 @@
-# BTD 6 farmer | A Macro creator for Bloons td 6
+# BTD 6 Farmer | Gameplanner Branch
 <span style="font-size:16px;">Inspired from [RavingSmurfGB/Py_AutoBloons](https://github.com/RavingSmurfGB/Py_AutoBloons)</span>
 
 [![Python application](https://github.com/linus-jansson/btd6farmer/actions/workflows/check_bot.yml/badge.svg?branch=main)](https://github.com/linus-jansson/btd6farmer/actions/workflows/check_bot.yml) 
@@ -7,88 +7,26 @@ Join the [Discord](https://discord.gg/qyKT6bzqZQ) for support, updates and shari
 
 Feel free to make a pull request if you have any improvements or create a issue if something isn't working correctly!
 
+# Make sure to read the main branch README.md for more information about the bot! This is only going to explain the usage of the gameplanner branch!
 ## Table Of Contents (TODO)
-- [Dependencies](#dependenices) 
-- [Installation](#installation)
-- [Running the bot](#running)
-- [Having issues?](#issues)
-- [Roadmap](#roadmap)
-- [Creating your own gameplan](#contributing)
-    - [Setup file](#setup_file)
-    - [Gameplan file](#gameplan_file)
-    - [Stats](#stats)
-    - [Keyword cheatsheet](#keywords)
-        - [Gamemodes](#gamemodes)
-        - [Difficulties](#difficulties)
-        - [Maps](#maps)
-        - [Heros](#heros)
-        - [Monkeys](#monkeys)
-
-<a name="dependenices"/>
-
-## Requirements & Dependencies
-- Tesseract v5.0+
-- Python 3.10+
-
-```
-keyboard==0.13.5
-mouse==0.7.1
-mss==6.1.0
-numpy==1.22.3
-opencv_python==4.5.5.64
-pytesseract==0.3.9
-```
-<a name="installation"/>
-
-## Installation of dependencies:
-The script relies on tesseract (tested with v5.3.0) which can be installed using this [this](https://github.com/UB-Mannheim/tesseract/wiki) guide. 
-(*If by any chance the tesseract installation directory is different from the directory specified in Bot.py you need to manually change that in the script. Otherwise the bot will not work!*)
-
-default path (all users tesseract installation):
-```py
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-```
-
-The python library requirments can be installed using `python -m pip install -r requirements.txt` or by running `Install_Requirements.bat`
-
-<a name="running"/>
-
-## Running the bot
-1. Open up BTD 6
-2. Run main.py in the command line with `py <location of script>/main.py --path <directory to gameplan>` or start `run.bat` to run with the default settings and gameplan. Some gamplans are included in the `gameplans` folder.
-3. Navigate to the homescreen of BTD 6.
-
-### Bot Launch options
-```
->> py main.py --help
-options:
-  -h, --help            show this help message and exit
-  -p PATH, --path PATH, --gameplan_path PATH
-                        Path to the gameplan directory
-  -d, --debug           Enable debug mode
-  -r, --restart         automatically restarts the game when finished, instead of going to home screen
-  -s, --sandbox         Try put gameplan in sandbox mode without waiting for specific rounds
-```
-
-<a name="issues"/>
-
-## Having issues with the bot?
-If you have any issues with the bot, find any bugs or have any suggestions for improvements, please create an issue or create a pull request!
-
-<a name="roadmap"/>
-
-### Roadmap
-The projects roadmap can be found [here](https://github.com/users/linus-jansson/projects/1/views/5)
-
-<a name="contributing"/>
-
-## Creating your own gameplans
-You are really welcome to create your own gameplans using your own stratergies and submiting them to the repo with a pull request. I will add it to the repository after testing!
-
-## Contributing to the project
-If you find any issues with the bot or have any suggestions for improvements, please create an issue. If you have any changes you would like to contribute with you can also create a pull request to the development branch!
-
-__*NOTE: AS THIS IS STILL A WORK IN PROGRESS I MAY CHANGE THE GUIDE AND LAYOUT OF THE GAMEPLAN IN THE FUTURE FOR EASE OF USE. ALSO SOME FREATURES SPECIFIED IN THE DOCS ARE NOT YET IMPLEMENTED BUT ARE PLANNED TO*__
+- [Setup file](#setup_file)
+- [Gameplan file](#gameplan_file)
+- [Instruction types](#instruction_types)
+- [Gameplanner](#gameplanner)
+    - [Placing Towers](#placing_towers)
+    - [Keybinds](#keybinds)
+        - [Upgrading Towers](#upgrading_towers)
+        - [Changing Static Target](#changing_static_target)
+        - [Changing Target](#changing_target)
+        - [Starting Round](#starting_round)
+        - [Save and Exit](#save_and_exit)
+- [Stats](#stats)
+- [Keyword cheatsheet](#keywords)
+    - [Gamemodes](#gamemodes)
+    - [Difficulties](#difficulties)
+    - [Maps](#maps)
+    - [Heros](#heros)
+    - [Monkeys](#monkeys)
 
 
 <a name="setup_file"/>
@@ -110,6 +48,8 @@ It should be named `setup.json` and be placed in the same directory as the gamep
 > `MAP` - Which map to use *[list of avaliable maps](#maps)* \
 > `DIFFICULTY` - Which Difficulty to use *[list of avaliable difficultues](#difficulties)* \
 > `GAMEMODE` - Which Gamemode to use *[list of avaliable Gamemodes](#gamemodes)* \
+
+At the end of the planner it will ask you if you want to save the setup file. If you answer yes it will save the setup file to the same directory as the instructions.
 
 <a name="gameplan_file"/>
 
@@ -193,70 +133,112 @@ An instruction array in a round can have multiple objects that will be executed 
     ]
     //...
 ```
-### Getting the position of a tower or the target position.
-An easy way to get the position of the tower or the target you want, is to use the following code:
-```py
-import mouse, time
-import tkinter
-import static
-import keyboard
-import os
-tk = tkinter.Tk()
-width, height = tk.winfo_screenwidth(), tk.winfo_screenheight()
-tk.destroy()
-step = """
-{{
-    "INSTRUCTION_TYPE": "PLACE_TOWER",
-    "ARGUMENTS": {{
-        "MONKEY": "{0}",
-        "LOCATION": [
-            {1},
-            {2}
-        ]
-    }}
-}}
-        """
-def find_tower(letter):
-    for tower in static.tower_keybinds:
-        if static.tower_keybinds[tower] == letter:
-            return tower
-    return None
 
-while True:
-    for tower in static.tower_keybinds:
-        print(static.tower_keybinds[tower].upper() + ". " +tower )
+<a name="gameplanner"/>
 
-    print("Press the key of the tower you want the coords for or press O to quit")
-    while True:
-        if keyboard.read_key().lower() in static.tower_keybinds.values():
-            letter = keyboard.read_key().lower()
-            break
-        elif keyboard.read_key().lower() == 'o':
-            exit()
-    tower = find_tower(letter)
-    if tower:
-        print("Press P to get the coords")
-        while True:
-            if keyboard.is_pressed('p'):
-                os.system('cls')
-                x, y = mouse.get_position()
-                w_norm, h_norm = x / width, y / height
-                print("Step:")
-                print(step.format(tower, w_norm, h_norm))
-                print("Press O to quit or press any other key to continue")
-                while True:
-                    if keyboard.read_key().lower() == 'o':
-                        exit()
-                    else:
-                        os.system('cls')
-                        break
-                break
-        
-    else:
-        print("Invalid tower")
-```
-Run it in a terminal and copy the decired position into the gameplan.
+# Gameplanner
+The gameplanner is the tool you're looking for in this branch. It's a tool that can generate a gameplan for you based on keybinds.
+This makes it easier for us to make Gameplans by actually playing the map and placing towers, only downside is YOU HAVE TO USE key binds for tower placements, upgrades and target changes. To use, run the GamePlanner.bat file and follow the instructions.
 
+<a name="placing_towers"/>
+## Keybinds to place towers
+|Tower|Keybind|
+|--|--|
+"DART"|"q"
+"BOOMERANG"|"w"
+"BOMB"|"e"
+"TACK"|"r"
+"ICE"|"t"
+"GLUE"|"y"
+"SNIPER"|"z"
+"SUBMARINE"|"x"
+"BUCCANEER"|"c"
+"ACE"|"v"
+"HELI"|"b"
+"MORTAR"|"n"
+"DARTLING"|"m"
+"WIZARD"|"a"
+"SUPER"|"s"
+"NINJA"|"d"
+"ALCHEMIST"|"f"
+"DRUID"|"g"
+"BANANA"|"h"
+"ENGINEER"|"l"
+"SPIKE"|"j"
+"VILLAGE"|"k"
+"HERO"|"u"
+
+When you start the planner it will ask you for a keybind to place a tower, you can only cancel this by pressing `ESC`. After you've placed a tower, it will ask you for the next keybind, until you press `O` to finish the gameplan.
+
+<a name="keybinds"/>
+## Keybinds
+|Keybind|Action|
+|--|--|
+"O"|"Finish gameplan and exit + Start setup file configs"
+"Ctrl+D"|"Upgrade Tower"
+"Ctrl+R"|"Start Round"
+"Ctrl+T"|"Change Static Target"
+"Ctrl+C"|"Change Target"
+
+You can use these keybinds instead of placing a tower
+
+<a name="upgrading_towers"/>
+### Upgrading towers
+First, after using the keybind, click the tower you want to upgrade.
+Use the keyboard keybinds for upgrading top, middle and bottom path. You can not use the mouse as the gameplanner relies on keybinds
+
+|Keybind|Path|
+|--|--|
+","|"Top"
+"."|"Middle"
+"/"|"Bottom"
+
+<a name="changing_static_target"/>
+### Changing Static Target
+First, after using the keybind, click the tower you want to change the target of.
+Then, click the target position you want to change to.
+
+<a name="changing_target"/>
+### Changing Target
+First, after using the keybind, click the tower you want to change the target of. NOTE: HOLD SHIFT WHILE CLICK TO SET IT TO SPIKE TYPE, otherwise it will be regular.
+Then choose the target with the keyboard keybinds as shown below.
+
+<details>
+<summary>SPIKE TYPE</summary>
+|Keybind|Target|
+|--|--|
+"1"|"NORMAL"
+"2"|"CLOSE"
+"3"|"FAR"
+"4"|"SMART"
+</details>
+
+<details>
+<summary>REGULAR TYPE</summary>
+|Keybind|Target|
+|--|--|
+"1"|"FIRST"
+"2"|"LAST"
+"3"|"CLOSE"
+"4"|"STRONG"
+</details>
+
+<a name="starting_round"/>
+### Starting Round
+Using the keybind it will add the starting round instruction, always fast fowrwarded
+
+<a name="save_and_exit"/>
+### Save and exit
+Finally after you've finished the gameplan, you can save it by pressing `O`, then it will ask if you'd like to make a setup file. Note: This fully uses the console, no keybinds here.
+This will ask for:
+Hero (Defaults to QUINCY)
+Map (Default to MONKEY_MEADOWS)
+Difficulty (Default to EASY)
+Gamemode (Default to STANDARD_GAME_MODE)
+
+[CheatSheet](#keywords)
+
+<a name="stats"/>
 
 ### Stats
 [Experience points per level](https://bloons.fandom.com/wiki/Experience_Point_Farming)
@@ -431,5 +413,3 @@ Run it in a terminal and copy the decired position into the gameplan.
 |Engineer Monkey|ENGINEER|
 
 </details>
-
-
