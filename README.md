@@ -144,29 +144,29 @@ This makes it easier for us to make Gameplans by actually playing the map and pl
 <a name="placing_towers"/>
 |Tower|Keybind|
 |--|--|
-"DART"|"q"
-"BOOMERANG"|"w"
-"BOMB"|"e"
-"TACK"|"r"
-"ICE"|"t"
-"GLUE"|"y"
-"SNIPER"|"z"
-"SUBMARINE"|"x"
-"BUCCANEER"|"c"
-"ACE"|"v"
-"HELI"|"b"
-"MORTAR"|"n"
-"DARTLING"|"m"
-"WIZARD"|"a"
-"SUPER"|"s"
-"NINJA"|"d"
-"ALCHEMIST"|"f"
-"DRUID"|"g"
-"BANANA"|"h"
-"ENGINEER"|"l"
-"SPIKE"|"j"
-"VILLAGE"|"k"
-"HERO"|"u"
+|"DART"|"q"|
+|"BOOMERANG"|"w"|
+|"BOMB"|"e"|
+|"TACK"|"r"|
+|"ICE"|"t"|
+|"GLUE"|"y"|
+|"SNIPER"|"z"|
+|"SUBMARINE"|"x"|
+|"BUCCANEER"|"c"|
+|"ACE"|"v"|
+|"HELI"|"b"|
+|"MORTAR"|"n"|
+|"DARTLING"|"m"|
+|"WIZARD"|"a"|
+|"SUPER"|"s"|
+|"NINJA"|"d"|
+|"ALCHEMIST"|"f"|
+|"DRUID"|"g"|
+|"BANANA"|"h"|
+|"ENGINEER"|"l"|
+|"SPIKE"|"j"|
+|"VILLAGE"|"k"|
+|"HERO"|"u"|
 
 When you start the planner it will ask you for a keybind to place a tower, you can only cancel this by pressing `ESC`. After you've placed a tower, it will ask you for the next keybind, until you press `O` to finish the gameplan.
 
@@ -174,11 +174,11 @@ When you start the planner it will ask you for a keybind to place a tower, you c
 <a name="keybinds"/>
 |Keybind|Action|
 |--|--|
-"O"|"Finish gameplan and exit + Start setup file configs"
-"Ctrl+D"|"Upgrade Tower"
-"Ctrl+R"|"Start Round"
-"Ctrl+T"|"Change Static Target"
-"Ctrl+C"|"Change Target"
+|"O"|"Finish gameplan and exit + Start setup file configs"|
+|"Ctrl+D"|"Upgrade Tower"|
+|"Ctrl+R"|"Start Round"|
+|"Ctrl+T"|"Change Static Target"|
+|"Ctrl+C"|"Change Target"|
 
 You can use these keybinds instead of placing a tower
 
@@ -189,9 +189,9 @@ Use the keyboard keybinds for upgrading top, middle and bottom path. You can not
 
 |Keybind|Path|
 |--|--|
-","|"Top"
-"."|"Middle"
-"/"|"Bottom"
+|","|"Top"|
+|"."|"Middle"|
+|"/"|"Bottom"|
 
 ### Changing Static Target
 <a name="changing_static_target"/>
