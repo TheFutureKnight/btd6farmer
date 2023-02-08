@@ -176,11 +176,11 @@ When you start the planner it will ask you for a keybind to place a tower, you c
 ## Keybinds
 |Keybind|Action|
 |--|--|
-|"O"|"Finish gameplan and exit + Start setup file configs"|
-|"Ctrl+D"|"Upgrade Tower"|
-|"Ctrl+R"|"Start Round"|
-|"Ctrl+T"|"Change Static Target"|
-|"Ctrl+C"|"Change Target"|
+|O|Finish gameplan and exit + Start setup file configs|
+|Ctrl+D|Upgrade Tower|
+|Ctrl+R|Start Round|
+|Ctrl+T|Change Static Target|
+|Ctrl+C|Change Target|
 
 You can use these keybinds instead of placing a tower
 
@@ -212,20 +212,20 @@ Then choose the target with the keyboard keybinds as shown below.
 <summary>SPIKE TYPE</summary>
 |Keybind|Target|
 |--|--|
-1|NORMAL
-2|CLOSE
-3|FAR
-4|SMART
+|1|NORMAL|
+|2|CLOSE|
+|3|FAR|
+|4|SMART|
 </details>
 
 <details>
 <summary>REGULAR TYPE</summary>
 |Keybind|Target|
 |--|--|
-1|FIRST
-2|LAST
-3|CLOSE
-4|STRONG
+|1|FIRST|
+|2|LAST|
+|3|CLOSE|
+|4|STRONG|
 </details>
 
 <a name="starting_round"/>
