@@ -209,6 +209,7 @@ First, after using the keybind, click the tower you want to change the target of
 Then choose the target with the keyboard keybinds as shown below.
 
 <details>
+    
 <summary>SPIKE TYPE</summary>
 
 |Keybind|Target|
@@ -220,6 +221,7 @@ Then choose the target with the keyboard keybinds as shown below.
 </details>
 
 <details>
+    
 <summary>REGULAR TYPE</summary>
 
 |Keybind|Target|
