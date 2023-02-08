@@ -242,10 +242,10 @@ Using the keybind it will add the starting round instruction, always fast fowrwa
 ### Save and Exit
 Finally after you've finished the gameplan, you can save it by pressing `O`, then it will ask if you'd like to make a setup file. Note: This fully uses the console, no keybinds here.
 This will ask for:
-Hero (Defaults to QUINCY)
-Map (Default to MONKEY_MEADOWS)
-Difficulty (Default to EASY)
-Gamemode (Default to STANDARD_GAME_MODE)
+> Hero (Defaults to QUINCY) \
+> Map (Default to MONKEY_MEADOWS) \
+> Difficulty (Default to EASY) \
+> Gamemode (Default to STANDARD_GAME_MODE) \
 
 [CheatSheet](#keywords)
 
