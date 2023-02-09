@@ -149,26 +149,26 @@ while True:
             if "y" in d.lower():
                 setup["VERSION"] = "1"
 
-                hero = input("Hero: ")
-                if hero.upper() not in static.hero_positions:
+                hero = input("Hero: ").upper()
+                if hero not in static.hero_positions:
                     print("Invalid hero, defaulting to Quincy")
                     hero = "QUINCY"
                 setup["HERO"] = hero
 
-                map = input("Map: ")
-                if map.upper() not in static.maps:
+                map = input("Map: ").upper()
+                if map not in static.maps:
                     print("Invalid map, defaulting to MONKEY_MEADOW")
                     map = "MONKEY_MEADOW"
                 setup["MAP"] = map
 
-                difficulty = input("Difficulty: ")
-                if difficulty.upper() not in ["EASY_MODE", "MEDIUM_MODE", "HARD_MODE"]:
+                difficulty = input("Difficulty: ").upper()
+                if difficulty not in ["EASY_MODE", "MEDIUM_MODE", "HARD_MODE"]:
                     print("Invalid difficulty, defaulting to EASY_MODE")
                     difficulty = "EASY_MODE"
                 setup["DIFFICULTY"] = difficulty
 
-                gamemode = input("Gamemode: ")
-                if gamemode.upper() not in ["CHIMPS_MODE","CHIMPS","DEFLATION","APOPALYPSE","REVERSE","MILITARY_ONLY","MAGIC_MONKEYS_ONLY","DOUBLE_HP_MOABS","HALF_CASH","ALTERNATE_BLOONS_ROUNDS","IMPOPPABLE","STANDARD_GAME_MODE"]:
+                gamemode = input("Gamemode: ").upper()
+                if gamemode not in ["CHIMPS_MODE","CHIMPS","DEFLATION","APOPALYPSE","REVERSE","MILITARY_ONLY","MAGIC_MONKEYS_ONLY","DOUBLE_HP_MOABS","HALF_CASH","ALTERNATE_BLOONS_ROUNDS","IMPOPPABLE","STANDARD_GAME_MODE"]:
                     print("Invalid gamemode, defaulting to STANDARD_GAME_MODE")
                     gamemode = "STANDARD_GAME_MODE"
                 setup["GAMEMODE"] = gamemode
