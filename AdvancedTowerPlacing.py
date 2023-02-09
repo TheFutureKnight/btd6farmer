@@ -114,7 +114,7 @@ def change_target_step(tower_args, target_args, round):
 def start_round_step(round):
     global result, last_round
 
-    step = stepformat("START_ROUND", {"FAST_FORWARD": True})
+    step = stepformat("START", {"FAST_FORWARD": True})
 
     if round is None:
         round = last_round
