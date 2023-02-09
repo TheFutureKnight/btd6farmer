@@ -1,8 +1,4 @@
 import sys
-import time
-import keyboard
-import mouse
-import static
 import tkinter
 from pathlib import Path
 
@@ -168,86 +164,6 @@ class BotUtils:
 
         with open(directory/_file_name, "wb") as output_file:
             output_file.write(data)
-
-    def _move_mouse(self, location, move_timeout=0.1):
-        mouse.move(x=location[0], y=location[1])
-        time.sleep(move_timeout)
-
-    def click(self, location: tuple | tuple, amount=1, timeout=0.5, move_timeout=0.1, press_time=0.075):        
-        """
-            Method to click on a specific location on the screen
-            @param location: The location to click on
-            @param amount: amount of clicks to be performed
-            @param timeout: time to wait between clicks
-            @param move_timeout: time to wait between move and click
-            @param press_time: time to wait between press and release
-        """
-
-        # If location is a string then assume that its a static button
-        if isinstance(location, str):
-            location = static.button_positions[location]
-        
-        # Move mouse to location
-        self._move_mouse(self._scaling(location), move_timeout)
-
-        for _ in range(amount):
-            mouse.press(button='left')
-            time.sleep(press_time) # https://www.reddit.com/r/AskTechnology/comments/4ne2tv/how_long_does_a_mouse_click_last/ TLDR; dont click too fast otherwise shit will break
-            mouse.release(button='left')
-            
-            """
-                We don't need to apply cooldown and slow down the bot on single clicks
-                So we only apply the .1 delay if the bot has to click on the same spot multiple times
-                This is currently used for level selection and levelup screen
-            """
-            if amount > 1:
-                time.sleep(timeout)
-        
-        time.sleep(timeout)
-
-    def press_key(self, key, timeout=0.1, amount=1):
-        for _ in range(amount):
-            keyboard.send(key)
-            time.sleep(timeout)
-
-    # Different methods for different checks all wraps over _find()
-    def menu_check(self):
-        return self._find( self._image_path("menu") )
-
-    def insta_monkey_check(self):
-        return self._find( self._image_path("instamonkey") )
-
-    def monkey_knowledge_check(self):
-        return self._find( self._image_path("monkey_knowledge") )
-
-    def victory_check(self):
-        return self._find( self._image_path("victory") )
-
-    def defeat_check(self):
-        return self._find( self._image_path("defeat") )
-
-    def levelup_check(self):
-        return self._find( self._image_path("levelup") )
-
-    def hero_check(self, heroString):
-        return self._find( self._image_path(heroString) ) or \
-            self._find( self._image_path(heroString + "_2") ) or \
-            self._find( self._image_path(heroString + "_3") )
-
-    def loading_screen_check(self):
-        return self._find( self._image_path("loading_screen") )
-
-    def home_menu_check(self):
-        return self._find( self._image_path("play") )
-
-    def language_check(self):
-        return self._find( self._image_path("english") )
-
-    def collection_event_check(self):
-        return self._find(self._image_path("diamond_case") )
-
-    def locate_static_target_button(self):
-        return self._find(self._image_path("set_target_button"), return_cords=True)
     
     def locate_round_area(self):
         return self._find(self._image_path("round_area"), return_cords=True, center_on_found=False)
@@ -423,18 +339,3 @@ class BotUtils:
         """
         result = self._locate_all(template_path, confidence)
         return result[0] if result is not None else None
-
-
-if __name__ == "__main__":
-    import time
-
-    inst = BotUtils()
-    inst.log = print
-    inst.DEBUG = True
-    time.sleep(2)
-
-
-    print(inst.getRound())
-
-    # res = inst._locate(inst._image_path("obyn"), confidence=0.9)
-    # print(res)
