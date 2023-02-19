@@ -142,7 +142,7 @@ while True:
             break
         elif k == 'o': # Save and exit
             play_beep(300,500)
-            with open(f'{save_path}/ATP_new_instructions.json', 'w') as f:
+            with open(f'{save_path}/instructions.json', 'w') as f:
                 json.dump(result, f, indent=3)
             
             d = input("Do you want to make the setupfile? (yes/y), press enter to skip.")
@@ -173,7 +173,7 @@ while True:
                     gamemode = "STANDARD_GAME_MODE"
                 setup["GAMEMODE"] = gamemode
 
-                with open(f'{save_path}/ATP_new_setup.json', 'w') as f:
+                with open(f'{save_path}/setup.json', 'w') as f:
                     json.dump(setup, f, indent=3)
             exit()
         elif k == 'd' and keyboard.is_pressed("ctrl"): # Upgrade
