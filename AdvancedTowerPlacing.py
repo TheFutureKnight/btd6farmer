@@ -1,10 +1,11 @@
 import mouse
 import keyboard
 import os
-import logging
 import json
-import static
-from BotUtils import BotUtils
+import time
+from Utils.monitor import width, height
+import Utils.static as static
+from Utils.BotUtils import BotUtils
 
 sound = True # Set to False if you don't want to hear the beeps
 
@@ -24,9 +25,7 @@ save_path = "gameplans/NewGameplan"
 if not os.path.isdir(save_path):
     os.makedirs(save_path)
 
-inst = BotUtils()
-inst.log = logging.debug
-inst.DEBUG = True
+inst = BotUtils(DEBUG=True)
 
 result = {}
 setup = {}
@@ -185,7 +184,7 @@ while True:
                     play_beep(800)
                     round = inst.getRound()
                     x, y = mouse.get_position()
-                    w_norm, h_norm = x / inst.width, y / inst.height
+                    w_norm, h_norm = x / width, y / height
                     top = 0
                     middle = 0
                     bottom = 0
@@ -223,7 +222,7 @@ while True:
                 if mouse.is_pressed(button='left'):
                     play_beep(800)
                     x, y = mouse.get_position()
-                    w_norm, h_norm = x / inst.width, y / inst.height
+                    w_norm, h_norm = x / width, y / height
                     print("Click on the map where you want to set the target, or esc to cancel")
                     while mouse.is_pressed(button='left'):
                         pass
@@ -232,7 +231,7 @@ while True:
                             play_beep(350)
                             x, y = mouse.get_position()
                             round = inst.getRound()
-                            w_norm_target, h_norm_target = x / inst.width, y / inst.height
+                            w_norm_target, h_norm_target = x / width, y / height
                             set_static_target_step((w_norm,h_norm),(w_norm_target,h_norm_target),round)
                             break
                         elif keyboard.is_pressed("esc"):
@@ -257,7 +256,7 @@ while True:
                     play_beep(900)
 
                     x, y = mouse.get_position()
-                    w_norm, h_norm = x / inst.width, y / inst.height
+                    w_norm, h_norm = x / width, y / height
                     target = None
                     for num, item in enumerate(target_list):
                         print(str(num+1) + ". " + item)
@@ -291,9 +290,10 @@ while True:
         print("Click on the map where you want to place the tower, or esc to cancel")
         while True:
             if mouse.is_pressed(button='left'):
-                round = inst.getRound()
                 x, y = mouse.get_position()
-                w_norm, h_norm = x / inst.width, y / inst.height
+                w_norm, h_norm = x / width, y / height
+                time.sleep(1.3)
+                round = inst.getRound()
                 add_tower_step((tower, w_norm, h_norm), round)
                 play_beep(800)
                 break

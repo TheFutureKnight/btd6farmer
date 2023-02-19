@@ -1,3 +1,18 @@
+# Wrappers around static data
+class Heros:
+    pass
+
+class Towers:
+    pass
+
+class Difficulty:
+    pass
+
+class Gamemode:
+    pass
+class Map (Difficulty, Gamemode):
+    pass
+
 button_positions = { # Creates a dictionary of all relative positions needed for monkeys
     "HOME_MENU_START"           : [ 0.438671875 , 0.8666666666666667 ],
     "EXPERT_SELECTION"          : [ 0.69453125 , 0.9055555555555556 ],
@@ -33,7 +48,7 @@ button_positions = { # Creates a dictionary of all relative positions needed for
     "VICTORY_CONTINUE"          : [ 0.501171875 , 0.84375 ],
     "VICTORY_HOME"              : [ 0.366796875 , 0.7805555555555556 ],
     "DEFEAT_HOME"               : [ 0.29453125 , 0.7520833333333333 ],
-    "DEFEAT_HOME_CHIMPS"        : [ 0.36328125 , 0.7520833333333333 ],
+    "DEFEAT_HOME_NO_CONTINUE"   : [ 0.36328125 , 0.7520833333333333 ],
     "EASTER_COLLECTION"         : [ 0.499609375 , 0.6326388888888889 ],
     "F_LEFT_INSTA"              : [ 0.3390625 , 0.5013888888888889 ],
     "F_RIGHT_INSTA"             : [ 0.65625 , 0.5013888888888889 ],
@@ -53,11 +68,11 @@ button_positions = { # Creates a dictionary of all relative positions needed for
     "RESTART_WIN"               : [ 0.551953125 , 0.7597222222222222 ],
     "RESTART_CONFIRM"           : [ 0.591796875 , 0.6694444444444444 ],
     "RESTART_DEFEAT"            : [ 0.430859375 , 0.7520833333333333 ],
-    "RESTART_DEFEAT_CHIMPS"     : [ 0.5 , 0.7597222222222222 ],
+    "RESTART_DEFEAT_NO_CONTINUE": [ 0.5 , 0.7597222222222222 ],
     "CONFIRM_CHIMPS"            : [ 0.500390625 , 0.6805555555555556 ],
-    "SETTINGS"                  : [0.037500 , 0.191667],
-    "LANGUAGE"                  : [0.555208 , 0.659259],
-    "ENGLISH"                   : [0.224479 , 0.192593]
+    "SETTINGS"                  : [ 0.037500 , 0.191667],
+    "LANGUAGE"                  : [ 0.555208 , 0.659259],
+    "ENGLISH"                   : [ 0.224479 , 0.192593]
 }
 
 hero_positions = {
@@ -192,7 +207,6 @@ upgrade_keybinds = {
     "top" : ",",
     "middle" : ".",
     "bottom" : "/"
-
 }
 
 # Index, regular targets, spike factory targets
