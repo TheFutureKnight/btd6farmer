@@ -178,11 +178,11 @@ while True:
         elif k == 'd' and keyboard.is_pressed("ctrl"): # Upgrade
             err = None
             print("Click on the map where you want to upgrade, or esc to cancel")
+            round = inst.getRound()
             play_beep(700)
             while True:
                 if mouse.is_pressed(button='left'):
                     play_beep(800)
-                    round = inst.getRound()
                     x, y = mouse.get_position()
                     w_norm, h_norm = x / width, y / height
                     top = 0
@@ -218,6 +218,8 @@ while True:
                 print(err)
         elif k == 't' and keyboard.is_pressed("ctrl"): # set static target
             print("Click on the map where the tower is, or esc to cancel")
+            round = inst.getRound()
+            play_beep(700)
             while True:
                 if mouse.is_pressed(button='left'):
                     play_beep(800)
@@ -230,7 +232,6 @@ while True:
                         if mouse.is_pressed(button='left'):
                             play_beep(350)
                             x, y = mouse.get_position()
-                            round = inst.getRound()
                             w_norm_target, h_norm_target = x / width, y / height
                             set_static_target_step((w_norm,h_norm),(w_norm_target,h_norm_target),round)
                             break
@@ -244,6 +245,8 @@ while True:
             clean()
         elif k == 'c' and keyboard.is_pressed("ctrl"): # change target
             print("Click on the map where the tower is, if shift is pressed: SPIKE else REGULAR, or esc to cancel")
+            round = inst.getRound()
+            play_beep(700)
             while True:
                 if mouse.is_pressed(button='left'):
                     if keyboard.is_pressed("shift"):
@@ -272,7 +275,6 @@ while True:
 
                     if target:
                         play_beep(800)
-                        round = inst.getRound()
                         change_target_step((w_norm,h_norm),(type,target),round)
                         break
                 elif keyboard.is_pressed("esc"):
