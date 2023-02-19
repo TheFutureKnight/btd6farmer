@@ -168,7 +168,7 @@ while True:
                 setup["DIFFICULTY"] = difficulty
 
                 gamemode = input("Gamemode: ").upper()
-                if gamemode not in ["CHIMPS_MODE","CHIMPS","DEFLATION","APOPALYPSE","REVERSE","MILITARY_ONLY","MAGIC_MONKEYS_ONLY","DOUBLE_HP_MOABS","HALF_CASH","ALTERNATE_BLOONS_ROUNDS","IMPOPPABLE","STANDARD_GAME_MODE"]:
+                if gamemode not in ["CHIMPS_MODE","CHIMPS","PRIMARY_ONLY","DEFLATION","APOPALYPSE","REVERSE","MILITARY_ONLY","MAGIC_MONKEYS_ONLY","DOUBLE_HP_MOABS","HALF_CASH","ALTERNATE_BLOONS_ROUNDS","IMPOPPABLE","STANDARD_GAME_MODE"]:
                     print("Invalid gamemode, defaulting to STANDARD_GAME_MODE")
                     gamemode = "STANDARD_GAME_MODE"
                 setup["GAMEMODE"] = gamemode
